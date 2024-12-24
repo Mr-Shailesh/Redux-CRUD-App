@@ -6,13 +6,6 @@ import { deleteMovie } from "../../store/movieSlice";
 import { toast } from "react-toastify";
 import { Modal, Button } from "react-bootstrap";
 
-interface Movie {
-  id: number;
-  title: string;
-  year: number;
-  genre: string;
-}
-
 const MovieTable: React.FC = () => {
   const dispatch = useDispatch();
 

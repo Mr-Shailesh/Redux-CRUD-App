@@ -5,18 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { addMovie, updateMovie } from "../../store/movieSlice";
 import { toast } from "react-toastify";
 
-interface MovieFormData {
-  title: string;
-  year: string;
-  genre: string;
-}
-
-interface ValidationErrors {
-  title: string;
-  year: string;
-  genre: string;
-}
-
 const MovieForm: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -104,10 +92,10 @@ const MovieForm: React.FC = () => {
 
       if (id) {
         dispatch(updateMovie(newMovie));
-        toast.success("Movie updated successfully");
+        toast.success("Movie updated successfully!");
       } else {
         dispatch(addMovie(newMovie));
-        toast.success("Movie added successfully");
+        toast.success("Movie added successfully!");
       }
       navigate("/");
     }
